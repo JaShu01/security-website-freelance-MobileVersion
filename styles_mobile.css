@@ -1,0 +1,1533 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  position: relative;
+  font-size: 0.8rem;
+  background-color: #575757;
+  height: 100%;
+  font-family: Montserrat, sans-serif;
+  min-width: 280px;
+  
+  
+}
+
+.navbar {
+  width: 100%;
+  height: 6rem;
+  background-color: #000;
+  position: fixed; /* добавьте это */
+  top: auto;
+  z-index: 1000; /* добавьте это, чтобы убедиться, что navbar находится поверх остального контента */
+}
+
+.navbar .container {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 5%;
+  margin-left: 2%;
+}
+
+.navbar-brand img {
+  height: 50%;
+  width: auto;
+  margin-top: 1em;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+}
+
+.navbar-menu {
+  margin-bottom: 0;
+  transition: transform 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%); /* Скрыть меню за правым краем экрана */
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  overflow-y: auto;
+  z-index: 1001; /* Убедиться, что меню находится поверх остального контента */
+  
+}
+
+.navbar-menu li {
+  display: inline-block;
+  margin-top: 4rem;
+}
+
+.navbar-menu li a {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  color: #ffffff;
+  font-weight: 550;
+  letter-spacing: 0.1rem;
+  padding: 0 1rem;
+ 
+
+}
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto; /* Выравнивание справа */
+}
+
+.burger-menu .line {
+  background-color: #ffffff;
+  height: 0.15rem;
+  width: 2.2rem;
+  margin: 0.3rem;
+}
+
+  .navbar-menu.active {
+    transform: translateX(0); /* Показать меню */
+  }
+  
+  
+  
+.navbar-menu li a:hover {
+    color: #ECAC34; /* Измените цвет на оранжевый при наведении */
+  }
+  .images-container {
+    
+    padding: 4%;
+    position: relative;
+    z-index: 2;
+}
+  .text-container {
+    background-color: #2a2a2a;
+    padding-top: 4%;
+    text-align: center;
+    margin: 0 auto;
+    width: 102%;
+    border-radius: 0.9rem; /* Скругление углов */
+    color: white;
+    margin-top: 9rem;
+   
+    
+  }
+  .text-container h1{
+    font-size: 2.2rem;
+    line-height: 1.8;
+    font-weight: 800;
+  }
+  .text-container p{
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 550;
+  }
+ 
+  .button-container {
+    display: inline-block;
+    overflow: hidden;
+    display: flex;
+    gap:3%
+    
+  }
+  .rounded-button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    background-color: #ECAC34;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: 550;
+    cursor: pointer;
+    z-index: 1;
+    color: black;
+    padding: 1% 2%;
+    margin-left: 3%;
+    margin-bottom: 2%;
+  }
+  
+  .button-background {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
+  .rounded-button_2 {
+    position: relative;
+    background-color: #2a2a2a;
+    border-color: #ECAC34;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 1;
+    color: white;
+    padding: 1% 2%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+   
+  .pop-up {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .pop-up-content {
+    background: linear-gradient(to right, #191a1b, #414345);
+    position: relative;
+    padding: 1.8rem;
+    border-radius: 0.9rem;
+    text-align: center;
+    width: 80%;
+    height: 17rem;
+  }
+  
+  .close-pop-up {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .pop-up-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .pop-up-button {
+    background-color: #121212;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    margin-top: 13%;
+    width: 90%;
+    height: 4rem;
+    
+  }
+  
+  .pop-up-button span {
+    color: #ECAC34;
+  }
+
+  #contact-info-popup .info-container {
+    text-align: center;
+    margin-top: -10%;
+    padding-top: 0;
+    height: 22rem;
+}
+
+#contact-info-popup .pop-up-content {
+    align-items: center;
+    justify-content: center;
+    height: 22rem;
+
+}
+
+
+#contact-info-popup .contact-info {
+    display: inline-block;
+    border: 0.1rem solid orange;
+    padding: 1rem;
+    margin-top: 2rem ;
+    margin-bottom: 4rem ;
+    border-radius: 0.5rem;
+    width: 88%;
+}
+
+#contact-info-popup .contact-info span {
+    display: block;
+    font-size: 0.8rem;
+}
+.info-container{
+  color: white;
+  font-size: 1rem;
+}
+.info-container p{
+  font-size: 0.7rem;
+}
+#contact-info-popup .contact-info .phone,
+#contact-info-popup .contact-info .email {
+  display: flex; /* переопределение свойства display */
+  align-items: center;
+  
+}
+.icon{
+  margin-right: 5%;
+  text-align: center;
+}
+#details-popup .pop-up-content {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 24rem;
+}
+
+#details-popup .details-container {
+  width: 95%; /* Установите ширину, чтобы контент не выглядел слишком растянутым */
+  
+}
+
+
+#details-popup .details-container button {
+  margin-top: 1rem;
+  background-color: orange;
+  color: white;
+  padding: 1rem;
+  border: none;
+  
+  border-radius: 0.3rem;
+}
+
+#details-popup .details-container .highlighted {
+  color: orange;
+}
+.details-container p{
+  color: white;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  
+}
+.input-feld {
+  display: flex;
+  flex-direction: column; /* Изменено с row на column */
+  align-items: center; /* Добавлено для центрирования элементов по горизонтали */
+  gap: 2rem; /* Изменено на em для согласованности и масштабируемости */
+}
+
+.input-feld input {
+  padding: 4%;
+  background-color: #2b2a2a;
+  border-color: #ffffff;
+  color: white;
+  width: 80%; /* Добавлено для контроля ширины полей ввода */
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  
+  
+}
+.input-feld button {
+  padding: 5% 22%;
+  background-color: #ECAC34;
+  color: black;
+  border: none;
+  
+  margin-top: 15%;
+  font-size: 1.1rem;
+  border-radius: 0.6rem;
+  margin-bottom: 10%;
+}
+
+
+
+
+  
+
+  .über-uns-container {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    justify-content: center; /* Выравнивание по горизонтали */
+    position: relative;
+    padding-top: 5rem;
+  }
+
+ .image{
+    width: 90%;
+    z-index: 0;
+    border-radius: 0.5rem;
+    height: 25rem;
+    filter: blur(0.7px);
+
+    
+ }
+ .uber-uns-features {
+    position: absolute; /* Абсолютное позиционирование */
+    display: flex;
+    flex-direction: column; /* Вертикальное направление */
+    align-items: left; /* Выравнивание по центру */
+    gap: 4rem; /* Расстояние между элементами */
+    
+  }
+  
+  .feature-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(42, 42, 42, 0.6); /* Прозрачный коричневый */
+    padding: 1.4rem; /* Добавьте отступ внутри рамки */
+    border-radius: 0.5rem; /* Скругленные углы */
+  }
+  
+  .feature-icon {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    
+  }
+  
+  .feature-text {
+    color: #ECAC34;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: left; /* Текст выравнивается по левому краю */
+  }
+  .dienste-container {
+    margin-top: 10%;
+    position: relative;
+    margin-bottom: 28rem;
+  }
+  .image-2 {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    z-index: 0;
+  }
+  .dienst-text-container {
+    
+    position: absolute;
+    bottom: -23rem;
+    background-color: #2b2a2a; 
+    width: 90%;
+    left: 5%;
+    padding: 1% 1%;
+    text-align: center;
+    border-radius: 1rem;
+    
+  }
+  .dienst-text h1 {
+    margin: 0;
+    padding: 1% 0;
+    color: #ECAC34;
+    font-size: 2.1rem ;
+  }
+  .dienst-text p {
+    margin: 0;
+    padding: 1% 0;
+    color: white;
+    font-size: 1.1rem ;
+    line-height: 2.2;
+    margin-top: 4%;
+    
+
+  }
+  .bold-txt{
+    font-weight: 700;
+  }
+  .underline-text::after {
+    content: "";
+    display: block;
+    height: 2px; /* Высота линии */
+    background-color: white; /* Цвет линии */
+    width: 50%; /* Ширина линии относительно текста */
+    margin-top: 5px; /* Отступ сверху */
+    margin-left: 24%;
+  }
+  .dienste-container-2 {
+    margin-top: 10%;
+    position: relative;
+    margin-bottom: 40rem;
+  }
+  .image-3 {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    z-index: 0;
+  }
+  .dienst-text-container-2 {
+    
+    position: absolute;
+    bottom: -40rem;
+    background-color: #2b2a2a; 
+    width: 90%;
+    left: 5%;
+    padding: 0% 0%;
+    text-align: center;
+    border-radius: 1rem;
+    
+  }
+  .dienst-text-2 h1 {
+    margin: 0;
+    padding: 1% 0;
+    color: #ECAC34;
+    font-size: 2.1rem ;
+  }
+  .dienst-text-2 p {
+    margin: 0;
+    padding: 1% 0;
+    color: white;
+    font-size: 1.1rem ;
+    line-height: 2.2;
+    margin-top: 4%;
+    
+
+  }
+  
+  .underline-text-2::after {
+    content: "";
+    display: block;
+    height: 0.1em; /* Высота линии */
+    background-color: white; /* Цвет линии */
+    width: 50%; /* Ширина линии относительно текста */
+    margin-top: 0.5em; /* Отступ сверху */
+    margin-left: 24%;
+  }
+
+  .next-steps {
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.next-steps h2 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-container {
+    background-color: #2b2a2a;
+    border-radius: 1em;
+    margin-bottom: 3rem;
+    width: 83%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step p {
+    color: white;
+    font-size: 1rem;
+    margin-top: 1rem; /* Отступ между текстом и кругом */
+    font-weight: 550;
+    line-height: 1.7;
+}
+
+.step::before {
+    content: ""; 
+    display: block;
+    width: 5rem; 
+    height: 5rem;
+    background-color: rgba(255, 183, 47, 1); 
+    border-radius: 50%;
+    text-align: center;
+    line-height: 5rem;
+    color: black;
+    font-weight: 1000;
+    font-size: 2rem;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.step-container:nth-child(1) .step::before {
+  content: "1";
+}
+
+.step-container:nth-child(2) .step::before {
+  content: "2";
+}
+
+.step-container:nth-child(3) .step::before {
+  content: "3";
+}
+
+
+.orange-text{
+  color: #ECAC34;
+}
+.consultation-section {
+  padding: 1%;
+  position: relative;
+}
+
+.consultation-container {
+  background-color: rgb(44, 43, 43);
+  padding: 1%;
+  text-align: center; /* Уже есть, просто подтверждаю */
+  margin: 0 auto;
+  width: 97%;
+  border-radius: 1em;
+  margin-bottom: 15%;
+}
+
+.consultation-container h2 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15%;
+  margin-top: 9%;
+  font-size: 1.3rem;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column; /* Изменено с row на column */
+  align-items: center; /* Добавлено для центрирования элементов по горизонтали */
+  gap: 3rem; /* Изменено на em для согласованности и масштабируемости */
+}
+
+.input-fields input {
+  padding: 4%;
+  background-color: #2b2a2a;
+  border-color: #ffffff;
+  color: white;
+  width: 80%; /* Добавлено для контроля ширины полей ввода */
+  font-size: 1rem;
+  border-radius: 0.5em;
+  
+  
+}
+
+.input-fields button {
+  padding: 5% 22%;
+  background-color: #ECAC34;
+  color: black;
+  border: none;
+  cursor: pointer;
+  margin-top: 15%;
+  font-size: 1rem;
+  border-radius: 0.6em;
+  margin-bottom: 10%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1001;
+  
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, black 10%, rgb(61, 61, 61) 90%);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 80%;
+  height: 14rem;
+   max-width: 500px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.close {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  
+  position: absolute;
+  top: 0%;
+  right: 2%;
+}
+
+.modal-body h{
+  font-size: 1.5rem;
+  color: orange;
+  margin-bottom: 1rem;
+}
+.modal-body p{
+  font-size: 0.8rem;
+  color: white;
+}
+
+footer {
+  padding: 4%;
+}
+
+.logo {
+  width: 5rem; /* smaller logo */
+  margin-left: 11%;
+  margin-top: -15%;
+}
+
+.impressum {
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.details {
+  font-size: 0.7rem; /* smaller text */
+  color: white;
+ 
+}
+.info p{
+  margin-top: 1%;
+}
+
+.datenschutz {
+  font-weight: 600;
+  font-size: 1.5em; /* larger text */
+  text-align: center; /* Выравнивание текста по центру */
+  margin-top: 4rem; /* Добавлен небольшой отступ сверху */
+  margin-left: 16rem;
+}
+
+.logo-container {
+  text-align: left; /* Центрировать текст и изображение */
+}
+
+.logo-texts {
+  display: block; /* Перевести текст на новую строку */
+  color: white; /* Сделать текст белым */
+  margin-top: 1.5rem; /* Увеличенный отступ сверху для разделения текста и логотипа */
+  font-size: 0.8rem; /* Уже установлено, просто подтверждение */
+  margin-bottom: 4rem;
+}
+
+.footer-content {
+  display: flex; /* Установка flex для правильного выравнивания элементов */
+  flex-direction: column; /* Элементы в колонку */
+  align-items: flex-start; /* Выравнивание элементов слева */
+}
+
+
+
+@media (max-width: 396px)  {
+ 
+  .logo-text {
+    font-size: 0.9rem;
+    
+  }
+  .navbar-menu li a {
+    font-size: 0.8rem;
+    margin-left: -1.3rem;
+    
+   
+  
+  }
+  .images-container {
+    
+    
+    margin-left: -0.5rem;
+    
+}
+  .text-container {
+   
+    width: 130%;
+   }
+ 
+  .text-container h1{
+    font-size: 1.8rem;
+    
+  }
+  .text-container p{
+    font-size: 0.9rem;
+    
+  }
+ 
+  .rounded-button {
+   
+    font-size: 1rem;
+    
+  }
+  
+
+  .rounded-button_2 {
+  
+    font-size: 1rem;
+    
+  }
+  
+  
+
+  #contact-info-popup .info-container {
+    margin-top: -14%;
+   
+}
+
+#contact-info-popup .contact-info {
+    
+    margin-top: 1.5rem ;
+    margin-bottom: 3rem ;
+    
+    width: 100%;
+}
+
+#details-popup .details-container {
+  width: 110%; /* Установите ширину, чтобы контент не выглядел слишком растянутым */
+  
+}
+
+
+.input-feld input {
+
+  font-size: 1rem;
+  
+  
+  
+}
+.input-feld button {
+  
+  font-size: 1rem;
+ 
+}
+
+.image{
+  width: 120%;
+ 
+  margin-left: 25%;
+
+  
+}
+.uber-uns-features {
+  
+  gap: 3rem; /* Расстояние между элементами */
+  
+}
+
+.feature-box {
+  
+  padding: 1rem; /* Добавьте отступ внутри рамки */
+  margin-left: 10%;
+}
+
+.feature-icon {
+  
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 5%;
+  
+ 
+  
+}
+
+.feature-text {
+ 
+  font-size: 1rem;
+  
+  
+}
+.dienste-container {
+  margin-top: 15%;
+  margin-bottom: 25rem;
+  
+  
+}
+.image-2 {
+  width: 125%;
+  
+}
+.dienst-text-container {
+  
+
+  bottom: -20rem;
+ 
+  width: 115%;
+ 
+  
+}
+.dienst-text h1 {
+ 
+  font-size: 2rem ;
+}
+.dienst-text p {
+  
+  font-size: 1rem ;
+  
+  
+
+}
+.bold-txt{
+  font-weight: 700;
+}
+
+.dienste-container-2 {
+  
+  margin-bottom: 35rem;
+}
+.image-3 {
+  width: 125%;
+  
+}
+.dienst-text-container-2 {
+  
+  
+  bottom: -35rem;
+  
+  width: 115%;
+ 
+  
+}
+.dienst-text-2 h1 {
+  
+  font-size: 2rem ;
+}
+.dienst-text-2 p {
+ 
+  font-size: 1rem ;
+  
+
+}
+
+.next-steps h2 {
+ 
+  font-size: 1.3rem;
+  margin-left: 14%;
+}
+
+
+.step-container {
+  
+  width: 110%;
+  
+  margin-left: 1.2rem;
+}
+
+
+
+.consultation-container {
+
+width: 127%;
+
+}
+
+
+
+.modal {
+
+width: 110%;
+}
+
+.modal-content {
+
+left: 45%;
+
+}
+
+
+
+
+
+}
+@media (min-width: 325px) and (max-width: 396px)  {
+ 
+
+  .navbar-menu li a {
+    font-size: 1rem;
+    
+    margin-bottom: 1rem;
+    
+}
+  
+  .text-container h1{
+    font-size: 1.9rem;
+    
+  }
+  .text-container p{
+    font-size: 1rem;
+    
+  }
+ 
+  .rounded-button {
+   
+    font-size: 1.2rem;
+    
+  }
+
+  
+  .pop-up-content {
+   
+    width: 90%;
+    height: 19rem;
+  }
+  
+  .close-pop-up {
+    
+    font-size: 1.7rem;
+    
+  }
+  
+  .pop-up-button {
+    
+    font-size: 1.1rem;
+   
+    
+  }
+  
+
+  .rounded-button_2 {
+  
+    font-size: 1.2rem;
+    
+  }
+  
+
+
+
+.input-feld input {
+
+  font-size: 1rem;
+  
+  
+  
+}
+.input-feld button {
+  
+  font-size: 1rem;
+ 
+}
+#contact-info-popup .info-container {
+  
+  margin-top: -9%;
+ 
+}
+
+
+
+#contact-info-popup .contact-info {
+
+  margin-top: 1.5rem ;
+  margin-bottom: 3.5rem ;
+  
+  width: 88%;
+}
+
+#contact-info-popup .contact-info span {
+  
+  font-size: 1rem;
+}
+.info-container{
+
+font-size: 1.2rem;
+}
+.info-container p{
+font-size: 0.8rem;
+}
+
+.icon{
+margin-right: 8%;
+
+}
+
+
+
+
+.details-container p{
+
+font-size: 1rem;
+
+}
+.input-feld {
+
+gap: 1.5rem; /* Изменено на em для согласованности и масштабируемости */
+}
+
+.input-feld input {
+
+font-size: 1rem;
+
+
+
+}
+.input-feld button {
+
+font-size: 1rem;
+
+}
+
+
+
+
+
+
+.feature-icon {
+  
+  width: 2rem;
+  height: 2rem;
+  margin-right: 10%;
+  
+ 
+  
+}
+
+.feature-text {
+ 
+  font-size: 1.2rem;
+  
+  
+}
+.dienste-container {
+  margin-top: 15%;
+  margin-bottom: 25rem;
+  
+  
+}
+
+
+.dienst-text h1 {
+ 
+  font-size: 2.1rem ;
+}
+.dienst-text p {
+  
+  font-size: 1.1rem ;
+  
+  
+
+}
+
+
+.dienste-container-2 {
+  
+  margin-bottom: 37rem;
+}
+
+.dienst-text-container-2 {
+  
+  
+  bottom: -37rem;
+  
+  
+ 
+  
+}
+.dienst-text-2 h1 {
+  
+  font-size: 2.1rem ;
+}
+.dienst-text-2 p {
+ 
+  font-size: 1.1rem ;
+  
+
+}
+
+.next-steps h2 {
+ 
+  font-size: 1.5rem;
+ 
+}
+.step p {
+
+  font-size: 1.1rem;
+ 
+}
+.consultation-container h2 {
+  
+  font-size: 1.5rem;
+}
+
+.input-fields {
+  
+  gap: 4rem; /* Изменено на em для согласованности и масштабируемости */
+}
+
+.input-fields input {
+  
+  font-size: 1.2rem;
+  
+  
+  
+}
+
+.input-fields button {
+  
+  font-size: 1.2rem;
+ 
+}
+
+
+
+.modal-body h{
+  font-size: 1.7rem;
+ 
+}
+.modal-body p{
+  font-size: 1rem;
+ 
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+@media (min-width: 397px) and (max-width: 500px)  {
+  .navbar-menu li a {
+   padding: 1 1rem;
+    margin-left: -1rem;
+    font-size: 0.9rem;
+}
+ 
+  .text-container {
+   
+    width: 104%;
+    margin-left: -0.5rem;
+    
+   }
+ 
+  .text-container p{
+    font-size: 0.9rem;
+    
+  }
+  
+    .dienst-text-container {
+     
+      width: 94%;
+      left: 3%;
+    
+      
+    }
+ 
+    .dienst-text-container-2 {
+       
+      width: 94%;
+      left: 3%;
+    
+      
+    }
+    #details-popup .details-container {
+      width: 97%; /* Установите ширину, чтобы контент не выглядел слишком растянутым */
+      
+    }
+  
+  
+  
+
+
+
+}
+@media (min-width: 423px)  {
+  .rounded-button {
+    
+    font-size: 1.2rem;
+   
+  }
+  
+
+  .rounded-button_2 {
+    
+    font-size: 1.2rem;
+    
+  }
+  .navbar-menu li a {
+ 
+    font-size: 1rem;
+  
+  }
+  .info-container p{
+    font-size: 0.7rem;
+  }
+
+
+}
+@media (min-width: 500px)  {
+  .text-container h1{
+    font-size: 2.4rem;
+    
+  }
+  .text-container p{
+    font-size: 1.2rem;
+    
+  }
+  .rounded-button {
+    
+    font-size: 1.4rem;
+   
+  }
+  
+
+  .rounded-button_2 {
+    
+    font-size: 1.4rem;
+    
+  }
+  .navbar-menu li a {
+ 
+    font-size: 1.2rem;
+  
+  }
+ 
+ 
+  
+  .pop-up-content {
+   
+    width: 85%;
+    height: 19rem;
+  }
+ 
+  
+  .pop-up-button {
+  
+    font-size: 1.2rem;
+   
+    
+  }
+  
+  .pop-up-button span {
+    color: #ECAC34;
+  }
+
+  #contact-info-popup .info-container {
+   
+    font-size: 1.2rem;
+}
+
+
+
+
+#contact-info-popup .contact-info {
+ 
+    margin-top: 1rem ;
+    margin-bottom: 3rem ;
+    
+    width: 78%;
+}
+
+
+
+.info-container p{
+  font-size: 0.9rem;
+}
+#contact-info-popup .contact-info .phone,
+#contact-info-popup .contact-info .email {
+
+  font-size: 0.9rem;
+  
+}
+
+#details-popup .pop-up-content {
+ 
+  height: 28rem;
+}
+
+
+
+
+.details-container p{
+  
+  font-size: 1.2rem;
+  
+}
+
+.input-feld button {
+ 
+  font-size: 1.3rem;
+  
+}
+.close {
+  
+  font-size: 1.8rem;
+ 
+}
+
+.modal-body h{
+  font-size: 1.9rem;
+  
+}
+.modal-body p{
+  font-size: 1.1rem;
+  
+}
+.feature-icon {
+
+  font-size: 1.3rem;
+ 
+  
+}
+
+.feature-text {
+ 
+  font-size: 1.4rem;
+ 
+}
+.dienst-text h1 {
+
+  font-size: 2.6rem ;
+}
+.dienst-text p {
+ 
+  font-size: 1.4rem ;
+
+  
+
+}
+.dienst-text-2 h1 {
+  
+  font-size: 2.6rem ;
+}
+.dienst-text-2 p {
+
+  font-size: 1.4rem ;
+  
+  
+
+}
+.dienste-container {
+
+  margin-bottom: 38rem;
+}
+.dienst-text-container {
+    
+  
+  bottom: -33rem;
+  
+  
+}
+.dienste-container-2 {
+
+  margin-bottom: 50rem;
+}
+
+.dienst-text-container-2 {
+  
+  
+  bottom: -50rem;
+  
+  
+}
+.next-steps h2 {
+ 
+  font-size: 2rem;
+  
+}
+
+
+
+
+.step p {
+  
+  font-size: 1.2rem;
+ 
+}
+.step::before {
+  
+  width: 6rem; 
+  height: 6rem;
+ 
+  line-height: 6rem;
+  
+  font-size: 2.3rem;
+ 
+}
+
+
+
+.consultation-container h2 {
+  
+  font-size: 1.7rem;
+}
+
+
+
+.input-fields input {
+  
+  font-size: 1.2rem;
+
+  
+  
+}
+
+.input-fields button {
+  
+  font-size: 1.2rem;
+  
+}
+
+
+
+
+
+
+}
+@media (min-width: 700px)  {
+  .navbar-menu li a {
+   font-size: 1rem;
+   
+  
+  }
+  .navbar-menu {
+
+    width: 35%;
+   
+    
+  }
+  
+  .navbar-menu li {
+   
+    margin-top: 6rem;
+  }
+  #contact-info-popup .pop-up-content {
+    
+    height: 20rem;
+
+}
+.pop-up-content {
+  
+  height: 24rem;
+}
+
+
+
+}
+
