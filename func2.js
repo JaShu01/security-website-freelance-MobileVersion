@@ -25,7 +25,7 @@ function initMobile() {
     formData.append('contact', nameInput.value); 
     formData.append('message', contactInput.value);
 
-    fetch('https://formspree.io/f/xdoryoqr', {
+    fetch('', {
         method: 'POST',
         body: formData,
         mode: 'no-cors'
